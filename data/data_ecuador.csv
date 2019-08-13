@@ -1,4 +1,4 @@
-id_news|diario|title|snippet|time|year|category
+id_news|diario|title|snippet|time|year|svm_prediction
 ecuador_elcomercio_2015_0|El Comercio|El papa Francisco llegó al Ecuador|A las 14:44, el avión del papa Francisco aterrizó en el aeropuerto Mariscal Sucre de Quito, Ecuador. Con esto, el Santo Padre inicia oficialmente este 5 de julio ...|5 Jul. 2015|2015|polit
 ecuador_elcomercio_2015_1|El Comercio|Nicolás Maduro llegó a Ecuador|El presidente venezolano, Nicolás Maduro, llegó, cerca del mediodía de este lunes 21 de septiembre, al aeropuerto Mariscal Sucre, en Tababela, para el ...|21 Sep. 2015|2015|polit
 ecuador_elcomercio_2015_2|El Comercio|El Papa viene al Ecuador|Cuando Francisco era sacerdote jesuita -entonces Jorge Bergoglio- visitó Ecuador. El país es mayoritariamente católico, y la visita de Su Santidad será sin ...|18 abr. 2015|2015|crime
