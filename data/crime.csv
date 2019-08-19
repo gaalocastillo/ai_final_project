@@ -1,4 +1,4 @@
-d_news|diario|title|snippet|time|year|svm_prediction
+id_news|diario|title|snippet|time|year|svm_prediction
 ecuador_eluniverso_2015_115|El Universo|Desarticulan red que vendía drogas sintéticas en Ecuador|La Policía colombiana desarticuló una red de narcotraficantes dedicada a la elaboración y venta de drogas sintéticas que eran distribuidas en Ecuador, Perú, ...|29 abr. 2015|2015|crime
 ecuador_eluniverso_2018_108|El Universo|Droga detectada en Manta iba a México|... específicamente en la sección Servicio Contra Incendios de la Fuerza Aérea Ecuatoriana, en cuyo hangar se hallaron en sacos de yute 990 paquetes con la ...|14 Sep. 2018|2018|crime
 ecuador_elcomercio_2015_40|El Comercio|Ecuador no descarta acudir a Corte Suprema de EE.UU. por caso ...|La Procuraduría de Ecuador advirtió el martes 4 de agosto, que evalúa acudir a la Corte Suprema de Estados Unidos por el fallo de una Corte de Columbia que ...|4 ago. 2015|2015|polit
@@ -71,5 +71,4 @@ ecuador_lahora_2018_17|La Hora (Ecuador)|Condena' internacional tras ataque terr
 ecuador_lahora_2018_20|La Hora (Ecuador)|Capturan en Colombia a implicada en bus con droga para extraditarla ...|Reiteró que en Colombia contra Orozco no hay ningún proceso y que su captura es por la petición de extradición que hace Ecuador. El accidente ocurrió en la ...|31 ago. 2018|2018|crime
 ecuador_lahora_2018_22|La Hora (Ecuador)|Ataque deja sin luz a miles de personas en la frontera de Colombia y ...|Casi 300.000 personas están a oscuras en la convulsa frontera colombiana con Ecuador, a raíz de un atentado atribuido este jueves por el ejército a la guerrilla ...|19 abr. 2018|2018|crime
 ecuador_lahora_2018_37|La Hora (Ecuador)|Narcotráfico, una amenaza para Ecuador|""Narcotráfico, una amenaza para Ecuador. DIC, 14, 2018 |. CAPO. Joaquín 'el Chapo' Guzmán fue recapturado en 2016 y en la actualidad enfrenta un juicio en ...""|13 dic. 2018|2018|crime
-
-
+ecuador_eluniverso_2017_30|El Universo|Reporte de niña desaparecida activa a lojanos|Padres de familia y alumnos de algunos planteles, más agentes de Policía participan de la búsqueda de Emilia Alejandra Benavídez Cuenca, de 9 años, cuya ...|16 dic. 2017|2017|crime
