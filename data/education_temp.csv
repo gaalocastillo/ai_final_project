@@ -1,0 +1,4 @@
+id_news,diario,title,snippet,time,year,svm_prediction
+ecuador_elcomercio_2018_79,El Comercio,"Ministro de Educación, Fander Falconí, confirma que deja el Gabinete",Como no estoy de acuerdo con el recorte a la educación pública ecuatoriana en el presupuesto del Estado me retiro de estas importantes funciones. Que la ...,23 Nov. 2018,2018,educ
+ecuador_eluniverso_2016_47,El Universo,75% de alumnos de zonas afectadas por terremoto inició clases,"""Es mucho más fácil ser joven en el Ecuador de hoy que en el Ecuador de hace 10 años"" dijo al referirse al bachillerato internacional del que solo había dos ...",9 May. 2016,2016,educ
+ecuador_eluniverso_2016_67,El Universo,Unidades educativas provisionales empezarán a acoger a estudiantes,Setenta y nueve días después del terremoto del 16 de abril los estudiantes de las zonas afectadas inician hoy las actividades de educación formal.,3 Jul. 2016,2016,educ
