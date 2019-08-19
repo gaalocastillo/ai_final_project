@@ -66,7 +66,7 @@ class TextProcessor(object):
 		text = str(text)
 		text = text.lower()# text to lower
 		text = text.rstrip('\n')
-		#text = self.remove_accents(text)#remove accents
+		text = self.remove_accents(text)#remove accents
 		text = self.remove_urls(text)#remove urls
 		text = self.remove_punctuation(text)#remove sign puntuation
 		text = self.remove_special_issues(text)
