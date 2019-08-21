@@ -57,6 +57,19 @@ df_model_test = pd.read_csv('../data/final_ecuador_data/final_test.csv')
 df_model_training.category.value_counts(normalize=False)
 df_model_test.category.value_counts(normalize=False)
 
+def process_news(text, MAX_NB_WORDS, MAX_SEQUENCE_LENGTH):
+	d = {'texto': [text]}
+	df = pd.DataFrame(data=d)
+	corpus = df["texto"]
+	vectorizer = TfidfVectorizer()
+	matrix = vectorizer.fit_transform(corpus)
+	tokenizer = Tokenizer(num_words=MAX_NB_WORDS, filters='!"#$%&()*+,-./:;<=>?@[\]^_`{|}~', lower=True)
+	tokenizer.fit_on_texts(corpus.values)
+	word_index = tokenizer.word_index
+	X = tokenizer.texts_to_sequences(corpus.values)
+	X = pad_sequences(X, maxlen=MAX_SEQUENCE_LENGTH)
+	return X
+
 # Prediction
 # Using the training and test dataset, we will predict the category of news.
 # SVM Classifier
@@ -98,6 +111,7 @@ def LSTM_(corpus, df_model):
 	print('data tensor shape:', X.shape)
 
 	Y = pd.get_dummies(df_model['category'])
+	labels = Y.columns
 	target = Y.as_matrix()
 	Y = target.copy()
 	print('Shape of label tensor:', target.shape)
@@ -124,6 +138,12 @@ def LSTM_(corpus, df_model):
 
 	save_model_weight(model, "LSTM")
 	result_graph(history, "LSTM")
+	# prediction
+	news = "La Policía colombiana desarticuló una red de narcotraficantes dedicada a la elaboración y venta de drogas sintéticas que eran distribuidas en Ecuador"
+	print("Prediction of news LSTM: " + news)
+	ynew = model.predict(process_news(news, MAX_NB_WORDS, MAX_SEQUENCE_LENGTH))
+	index_max = np.argmax(ynew[0])
+	print("result: " + labels[index_max])
 LSTM_(corpus, df_model)
 
 print("\n\n\n#################### CNN #####################################################################\n\n\n")
@@ -139,7 +159,7 @@ def CNN_(corpus, df_model):
 	X = pad_sequences(X, maxlen=MAX_SEQUENCE_LENGTH)
 	print('data tensor shape:', X.shape)
 	Y = pd.get_dummies(df_model['category'])
-	target_labels = Y.columns
+	labels = Y.columns
 	target = Y.as_matrix()
 	Y = target.copy()
 	print('Shape of label tensor:', target.shape)
@@ -162,11 +182,17 @@ def CNN_(corpus, df_model):
 
 	model.compile(loss='categorical_crossentropy',optimizer='rmsprop',  metrics=['acc'])
 	history = model.fit(X_train, y_train, epochs=70, batch_size=10,validation_split=0.3, callbacks=[EarlyStopping(monitor='val_loss', patience=3, min_delta=0.0001)])
-	print(X_test)
 	result = model.evaluate(X_test,y_test)
 	print('Test \n  Loss: {:0.4f} \nAccuracy: {:0.4f}'.format(result[0],result[1]))
-
 	save_model_weight(model, "CNN")
 	result_graph(history, "CNN")
+
+	# prediction
+	news = "La Policía colombiana desarticuló una red de narcotraficantes dedicada a la elaboración y venta de drogas sintéticas que eran distribuidas en Ecuador"
+	print("Prediction of news CNN: " + news)
+	ynew = model.predict(process_news(news, MAX_NB_WORDS, MAX_SEQUENCE_LENGTH))
+	index_max = np.argmax(ynew[0])
+	print("result: " + labels[index_max])
+	
 
 CNN_(corpus, df_model)
