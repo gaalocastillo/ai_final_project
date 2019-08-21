@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block js %}
+{% endblock %}
+
+{% block contenido %}
+<div class="offset-md-1 col-md-10">
+	<form action="" method="post">
+  	{% csrf_token %}
+  		<div class="row justify-content-center mr-1 ml-1">
+  			<label class="mt-2 m-2"> &nbsp;&nbsp;Select: &nbsp;&nbsp;</label>
+			<select name="type" class="col-md-1" required>
+				<option value="CNN">CNN</option>
+				<option value="LSTM">LSTM</option>
+	      	</select>
+	    </div>
+  		<div class = "row justify-content-center mr-1 ml-1">
+    		<label class="mt-1">&nbsp; new &nbsp;</label>
+    		<input class="col-md-10"  name="data" required value="{{data}}">
+    		<button class="btn btn-primary" id="">Classify</button>
+    		<br/>
+  		</div>
+	</form>
+</div>
+
+<div class="offset-md-1 col-md-10">
+{% if result %}
+	<br>
+    <div class="list-group">
+	  <a href="#" class="list-group-item active">Category: {{result}}</a>
+	</div> 
+	{% endif %}
+</div>
+
+<div class="offset-md-3 col-md-6">
+	<br><br>
+	<h1 class="text-center">Project:<br> Identifying social issues in online news using text classification</h1>
+	<h2>Introduction</h2>
+	<p class="text-justify">Countries face different socio economic and political problems. Identifying those issues is
+crucial for governments and political parties to establish efficient plans to handle them.
+Currently, what governments do is to check the perception of their citizens through costly
+censuses. This is critical for undeveloped countries and countries in means of development,
+where resources are limited and must be managed very carefully. There are also
+independent and non-profit organizations like Latinobarómetro, that are dedicated to observe
+the development of democracies, economies and societies.<br>
+Latinobarómetro conducts surveys every year to identify the main problems Latin American
+nations face, based on public opinion. Nevertheless, these surveys are also costly and
+consequently, they cannot be carried out frequently.<br>
+Another conventional way to know about what happens in a country is by reading the news.
+With the expansion of the Internet, something that happens in a country miles away can be
+known almost in real time by anyone in any part of the world. Reading news may be useful
+to get brief information about the current state of a country, by providing necessary
+information about development, war, education etc [9]. Normally, news providers divide their
+headlines in different sections. Moreover, thanks to the Internet, these providers make
+available their articles through the WWW.<br>
+Our work aims to develop a model that accurately classifies news, in order to reveal the
+trending topics that disturb the citizens of a nation through a cheaper(in terms of man hours
+and financial resources) and faster methodology. We make a comparison between different
+ML algorithms. For the dataset, we use news from Ecuador, a country in means of
+development from Latin America.</p>
+
+	<h2>Authors</h2>
+	<div class="list-group">
+		<a href="#" class="list-group-item ">Castillo Galo</a>
+		<a href="#" class="list-group-item ">Guaranda María Belen</a>
+		<a href="#" class="list-group-item ">Leiton Mauricio</a>
+	</div> 
+</div>
+{% endblock %}

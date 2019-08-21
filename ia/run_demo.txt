@@ -1,0 +1,11 @@
+#crear entorno virtual
+virtualenv --python=python3.5 env
+
+#acceso
+source env/bin/activate 
+ 
+#instalar dependencias
+pip install -r requirements.txt
+
+#ejecutar
+python manage.py runserver
