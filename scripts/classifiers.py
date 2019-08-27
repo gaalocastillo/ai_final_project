@@ -4,7 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import SVC
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.model_selection import train_test_split
-from TextProcessor import *
+#from TextProcessor import *
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from keras.models import Sequential
@@ -144,12 +144,12 @@ def LSTM_(corpus, df_model):
 	ynew = model.predict(process_news(news, MAX_NB_WORDS, MAX_SEQUENCE_LENGTH))
 	index_max = np.argmax(ynew[0])
 	print("result: " + labels[index_max])
-LSTM_(corpus, df_model)
+#LSTM_(corpus, df_model)
 
 print("\n\n\n#################### CNN #####################################################################\n\n\n")
 
 def CNN_(corpus, df_model):
-	MAX_NB_WORDS = 450			# The maximum number of words
+	MAX_NB_WORDS = 500			# The maximum number of words
 	MAX_SEQUENCE_LENGTH = 15	# Max number of words in each complaint.
 	tokenizer = Tokenizer(num_words=MAX_NB_WORDS, filters='!"#$%&()*+,-./:;<=>?@[\]^_`{|}~', lower=True)
 	tokenizer.fit_on_texts(corpus.values)
@@ -186,8 +186,8 @@ def CNN_(corpus, df_model):
 	print('Test \n  Loss: {:0.4f} \nAccuracy: {:0.4f}'.format(result[0],result[1]))
 	save_model_weight(model, "CNN")
 	result_graph(history, "CNN")
-
-	# prediction
+    
+	print(model.summary())
 	news = "La Policía colombiana desarticuló una red de narcotraficantes dedicada a la elaboración y venta de drogas sintéticas que eran distribuidas en Ecuador"
 	print("Prediction of news CNN: " + news)
 	ynew = model.predict(process_news(news, MAX_NB_WORDS, MAX_SEQUENCE_LENGTH))
